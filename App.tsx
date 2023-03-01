@@ -1,20 +1,30 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { RootStackParams } from "src/interfaces/TRootStackParams";
+import AccountScreen from "./src/screens/AccountScreen";
+import { HomeScreen } from "./src/screens/HomeScreen";
+import { registerRootComponent } from 'expo';
+
+const RootStack = createNativeStackNavigator<RootStackParams>();
 
 export default function App() {
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+    <NavigationContainer>
+      <RootStack.Navigator initialRouteName='Home'>
+        <RootStack.Screen
+          name='Home'
+          component={HomeScreen}
+          options={{headerShown: false}}
+        />
+        <RootStack.Screen
+          name='Account'
+          component={AccountScreen}
+          options={{headerShown: false}}
+        />
+      </RootStack.Navigator>
+    </NavigationContainer>
+  );                           
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+registerRootComponent(App);
