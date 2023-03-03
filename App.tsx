@@ -15,16 +15,16 @@ export default function App() {
         <RootStack.Screen
           name='Home'
           component={HomeScreen}
-          options={{headerShown: false}}
+          options={{ headerShown: false }}
         />
         <RootStack.Screen
           name='Account'
-          component={AccountScreen}
-          options={{headerShown: false}}
+          component={() => <AccountScreen name="" age={1} />}
+          options={{ headerShown: false }}
         />
       </RootStack.Navigator>
     </NavigationContainer>
-  );                           
+  );
 }
 
 registerRootComponent(App);
