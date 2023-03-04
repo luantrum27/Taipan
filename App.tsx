@@ -6,6 +6,7 @@ import { HomeScreen } from "./src/screens/HomeScreen";
 import { registerRootComponent } from 'expo';
 import { MessagesScreen } from "./src/screens/MessagesScreen";
 import { Example } from "./src/screens/Example";
+import { NativeBaseProvider } from "native-base";
 
 const RootStack = createNativeStackNavigator<RootStackParams>();
 
@@ -16,30 +17,32 @@ const Account = () => {
 export default function App() {
 
   return (
-    <NavigationContainer>
-      <RootStack.Navigator initialRouteName='Example'>
-        <RootStack.Screen
-          name='Home'
-          component={HomeScreen}
-          options={{ headerShown: false }}
-        />
-         <RootStack.Screen
-          name='Account'
-          component={Account}
-          options={{ headerShown: false }}
-        />
-        <RootStack.Screen
-          name='Messages'
-          component={MessagesScreen}
-          options={{ headerShown: false }}
-        />
-        <RootStack.Screen
-          name='Example'
-          component={Example}
-          options={{ headerShown: false }}
-        />
-      </RootStack.Navigator>
-    </NavigationContainer>
+    <NativeBaseProvider>
+      <NavigationContainer>
+        <RootStack.Navigator initialRouteName='Messages'>
+          <RootStack.Screen
+            name='Home'
+            component={HomeScreen}
+            options={{ headerShown: false }}
+          />
+          <RootStack.Screen
+            name='Account'
+            component={Account}
+            options={{ headerShown: false }}
+          />
+          <RootStack.Screen
+            name='Messages'
+            component={MessagesScreen}
+            options={{ headerShown: false }}
+          />
+          <RootStack.Screen
+            name='Example'
+            component={Example}
+            options={{ headerShown: false }}
+          />
+        </RootStack.Navigator>
+      </NavigationContainer>
+    </NativeBaseProvider>
   );
 }
 
