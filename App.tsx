@@ -7,6 +7,7 @@ import { registerRootComponent } from 'expo';
 import { MessagesScreen } from './src/screens/MessagesScreen';
 import { Example } from './src/screens/Example';
 import { NativeBaseProvider } from 'native-base';
+import { Login } from './src/screens/Login';
 
 const RootStack = createNativeStackNavigator<RootStackParams>();
 
@@ -18,7 +19,7 @@ export default function App() {
   return (
     <NativeBaseProvider>
       <NavigationContainer>
-        <RootStack.Navigator initialRouteName="Example">
+        <RootStack.Navigator initialRouteName="Login">
           <RootStack.Screen
             name="Home"
             component={HomeScreen}
@@ -37,6 +38,11 @@ export default function App() {
           <RootStack.Screen
             name="Example"
             component={Example}
+            options={{ headerShown: false }}
+          />
+          <RootStack.Screen
+            name="Login"
+            component={Login}
             options={{ headerShown: false }}
           />
         </RootStack.Navigator>
