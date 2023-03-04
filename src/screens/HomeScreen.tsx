@@ -7,7 +7,6 @@ import { useRedirect } from "../hooks/useRedirect";
 type Props = NativeStackScreenProps<RootStackParams, "Home">
 
 export const HomeScreen: React.FC<Props> = ({navigation}) => {
-  // const navigation = useRedirect();
   return (
     <View>
       <Text>Home</Text>
