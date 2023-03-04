@@ -17,7 +17,7 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <RootStack.Navigator initialRouteName='Example'>
+      <RootStack.Navigator initialRouteName='Messages'>
         <RootStack.Screen
           name='Home'
           component={HomeScreen}
