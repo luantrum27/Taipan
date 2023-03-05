@@ -16,7 +16,7 @@ import {
 import { useState } from 'react';
 import { RootStackParams } from 'src/interfaces/TRootStackParams';
 import { useRedirect } from '../hooks/useRedirect';
-import MaterialIcons from 'react-native-vector-icons';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 export const Login: React.FC = () => {
   const [show, setShow] = useState(false);
