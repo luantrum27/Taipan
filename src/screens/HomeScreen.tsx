@@ -13,7 +13,7 @@ export const HomeScreen: React.FC<Props> = ({navigation}) => {
       <Button
         title="Go to Jane's profile"
         onPress={() =>
-          navigation.navigate('Account', { name: "Hoang The Luan", age: 18 })
+          navigation.navigate('Messages')
         }
       />
     </View>
