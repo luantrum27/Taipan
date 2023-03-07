@@ -1,0 +1,1 @@
+export default './user-pinned-1.png';
