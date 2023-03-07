@@ -1,8 +1,7 @@
 
-import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { Button, Text, View } from "react-native";
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { RootStackParams } from "src/interfaces/TRootStackParams";
-import { useRedirect } from "../hooks/useRedirect";
 
 type Props = NativeStackScreenProps<RootStackParams, "Home">
 

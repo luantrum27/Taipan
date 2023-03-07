@@ -1,1 +1,0 @@
-export const haha = [1, 2, 3];

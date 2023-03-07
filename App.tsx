@@ -1,7 +1,7 @@
 import { DefaultTheme, NavigationContainer, DarkTheme } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { RootStackParams } from "src/interfaces/TRootStackParams";
 import { HomeScreen } from "./src/screens/HomeScreen";
+import ChatScreen from "./src/screens/ChatScreen";
 import { registerRootComponent } from 'expo';
 import { MessagesScreen } from "./src/screens/MessagesScreen";
 import { NativeBaseProvider } from "native-base";
@@ -9,6 +9,8 @@ import { fonts } from "./src/assets/fonts";
 import { useCallback, useEffect, useState } from "react";
 import * as SplashScreen from 'expo-splash-screen';
 import * as Font from 'expo-font';
+import React from "react";
+import { RootStackParams } from './src/interfaces/TRootStackParams';
 
 
 const RootStack = createNativeStackNavigator<RootStackParams>();
@@ -49,7 +51,7 @@ export default function App() {
   return (
     <NativeBaseProvider>
       <NavigationContainer onReady={onLayoutRootView} theme={DarkTheme}>
-        <RootStack.Navigator initialRouteName='Messages'>
+        <RootStack.Navigator initialRouteName='ChatScreen'>
           <RootStack.Screen
             name='Home'
             component={HomeScreen}
@@ -58,6 +60,11 @@ export default function App() {
           <RootStack.Screen
             name='Messages'
             component={MessagesScreen}
+            options={{ headerShown: false }}
+          />
+          <RootStack.Screen
+            name='ChatScreen'
+            component={ChatScreen}
             options={{ headerShown: false }}
           />
         </RootStack.Navigator>

@@ -1,4 +1,3 @@
-import { Example } from 'src/screens/Example';
 export type RootStackParams = {
     Home: undefined;
     Account: {
@@ -7,4 +6,5 @@ export type RootStackParams = {
     };
     Messages: undefined;
     Example: undefined;
+    ChatScreen: undefined;
 }
